@@ -20,15 +20,15 @@ export default async function FetchProducts() {
       
   
   return (
-    <div className="grid grid-cols-3 gap-[40px] pl-[80px]">
+    <div className="w-full">
+            <div className="grid lg:grid-cols-3 gap-[40px] lg:pl-[80px] ex:pl-[15px] mt-[100px] mb-[100px]">
       {products.map((Data:any) => (
         <Link href={`products/${Data.productSlug}`} key={Data.productSlug}>
-          <div className="w-[550px] h-[800px] hover:shadow-slate-400 hover:shadow-lg shadow-md shadow-slate-300 rounded-lg">
+          <div className="lg:w-[550px] lg:h-[800px] ex:w-[400px] ex:h-[600px] hover:shadow-slate-400 hover:shadow-lg shadow-md shadow-slate-300 rounded-lg">
             <img
               src={urlFor(Data.productImage).url()}
               alt=""
-              width="550"
-              height="480"
+             className="lg:w-[550px] lg:h-[600px] ex:w-[400px] ex:h-[400px]"
             />
             <div className="pl-[20px] pt-[20px] font-sans">
               <p className="text-[20px] text-red-500 font-semibold">{Data.status}</p>
@@ -39,6 +39,7 @@ export default async function FetchProducts() {
           </div>
         </Link>
       ))}
+    </div>
     </div>
   );
 }
