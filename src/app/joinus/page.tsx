@@ -3,7 +3,7 @@ import logo from "@/app/images/logo.png"
 
 export default function Joinus(){
  return <div className="w-full">
-  <div className="w-[380px] lg:h-[833px] ex:h-[780px] font-sans lg:ml-[750px] ex:ml-[25px] mt-[80px] mb-[100px] lg:pt-[28px] ex:pt-[12px] border-[#E5E5E5] border-[2px] rounded-[10px] lg:mt-[80px] lg:mb-[90px]  shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
+  <div className="w-[380px] lg:h-[833px] ex:h-[780px] font-sans lg:ml-[750px] ex:ml-[5px] mt-[80px] mb-[100px] lg:pt-[28px] ex:pt-[12px] border-[#E5E5E5] border-[2px] rounded-[10px] lg:mt-[80px] lg:mb-[90px]  shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
   <div className="w-[324px] h-[182px] text-center ml-[28px]">
     <Image src={logo} alt="logo" className="ml-[135px]" />
     <p className="font-bold text-[18px] leading-[16px] lg:mt-[30px] ex:mt-[25px] ex:ml-[-20px]">BECOME A NIKE MEMBER</p>

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Login(){
  return <div className="w-full">
-    <div className="lg:w-[380px] h-[489px] ex:w-[300px] border-[#BCBCBC] mb-[60px] border-[1px] rounded-[10px] lg:ml-[800px] ex:ml-[66px] mt-[96px] pt-[28px] shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
+    <div className="lg:w-[380px] h-[489px] ex:w-[300px] border-[#BCBCBC] mb-[60px] border-[1px] rounded-[10px] lg:ml-[800px] ex:ml-[40px] mt-[96px] pt-[28px] shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
    <div className="w-[324px] h-[128px] ml-[28px]">
       <Image src={logo} alt="logo" className="lg:ml-[135px] ex:ml-[100px]" />
       <p className="w-[186px] h-[60px] font-bold text-[19px] text-center lg:ml-[76px] ex:ml-[26px] mt-[15px]">YOUR ACCOUNT FOR EVERYTHING NIKE</p>
