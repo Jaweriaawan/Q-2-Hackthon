@@ -11,7 +11,7 @@ export default function Contactus(){
     return <div className="font-sans lg:mt-[100px] ex:w-full ex:mt-[40px] lg:mb-[10px] overflow-x-hidden">
        <div className="lg:w-[1428px] lg:h-[1250px] ex:w-[390px] ex:px-[10px] py-[20px] pt-[80px] lg:ml-[100px]">
          <div className="lg:w-[1428px] lg:h-[132px] ex:w-full relative">
-           <p className="font-semibold text-[32px] leading-9 lg:text-center ex:ml-[110px] mt-[-40px] mb-[20px]">GET HELP</p>
+           <p className="font-bold text-[32px] leading-9 lg:text-center ex:ml-[110px] mt-[-40px] mb-[20px]">GET HELP</p>
            <div className="lg:w-[457.33px] lg:h-[60] lg:ml-[540px] ex:w-[380px] ex:h-[40px] flex border-[1px] border-[#757575] rounded-[8px] mb-[20px] ex:ml-[-5px]">
              <p className=" font-medium lg:text-[15px] ex:text-[13px] leading-5 text-[#757575] lg:mt-[10px] lg:ml-[20px] ex:ml-[15px] ex:mt-[9px]">What can we help you with?</p>
              <IoSearchOutline className="lg:ml-[200px] ex:ml-[160px] lg:w-[24px] lg:h-[24px] ex:w-[20px] ex:h-[20px] text-[#757575] ex:mt-[9px] lg:mt-[10px]" />
@@ -23,7 +23,7 @@ export default function Contactus(){
             <div className="lg:w-[939px] lg:h-[1042px] ex:w-full lg:mt-[30px]">
               <p className="ex:w-[310px] ex:h-[60px] lg:w-[850px] lg:mb-[20px] lg:h-[31px] font-semibold lg:text-[32px] ex:text-[21px] lg:leading-9 ex:leading-6 lg:ml-[20px]">WHAT PAYMENT OPTIONS CAN I USE ON NIKE ORDERS?</p>
               <p className="lg:w-[905px] ex:w-[380px] font-medium lg:text-[15px] ex:text-[13px] lg:leading-9 ex:leading-[20px] lg:ml-[20px] mb-[10px]">We want to make buying your favourite Nike shoes and gear online fast and easy, and we accept the following payment options:</p>
-              <p className="lg:w-[590px] ex:w-[380px] font-medium lg:text-[15px] ex:text-[13px] lg:leading-9 ex:leading-[20px] lg:ml-[50px]">Visa, Mastercard, Diners Club, Discover, American Express, Visa Electron, Maestro</p>
+              <p className="lg:w-[590px] ex:w-[380px] font-medium lg:text-[15px] ex:text-[13px] lg:leading-9 ex:leading-[20px]">Visa, Mastercard, Diners Club, Discover, American Express, Visa Electron, Maestro</p>
               <p className="lg:w-[870px] ex:w-[380px] lg:mt-0 ex:mt-[10px] font-medium lg:text-[15px] ex:text-[13px] ex:leading-[20px] lg:leading-9 lg:ml-[50px]">If you enter your PAN information at checkout, you'll be able to pay for your order with PayTM or a local credit or debit card.</p>
               <p className="font-medium lg:text-[15px] ex:text-[13px] lg:mt-0 ex:mt-[10px] leading-9 lg:ml-[50px]">Apple Pay</p>
               <div className="w-[923px] h-[115px] mt-[10px]">

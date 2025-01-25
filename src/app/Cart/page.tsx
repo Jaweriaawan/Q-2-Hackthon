@@ -38,9 +38,8 @@ const Cartpage: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className='px-[15px]'>
-              {/* <FiShoppingBag className='w-[150px] h-[150px] text-slate-300 ex:ml-[65px] lg:ml-[]' /> */}
-             <p className='text-lg font-sans font-semibold text-center text-[26px] ex:ml-[-50px] lg:ml-0 ex:mt-[60px] lg:mt-0'>Your cart is feeling a bit lonely! 🛒</p>
+          <div className='px-[15px]'> 
+             <p className='text-lg font-sans font-semibold text-center ex:text-[26px] lg:text-[60px] ex:ml-[-50px] lg:ml-0 ex:mt-[60px] lg:mt-0'>Your cart is feeling a bit lonely! 🛒</p>
              <p className='text-[18px] ex:mt-[20px] lg:mt-[20px] ex:ml-[-25px] lg:ml-[] text-center'>Looks like you haven't added anything yet. Start exploring and find your favorites</p>
           </div>
         )}

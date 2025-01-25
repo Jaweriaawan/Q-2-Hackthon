@@ -15,21 +15,22 @@ import pic9 from "@/app/images/home10.png"
 import pic10 from "@/app/images/home11.png"
 import pic11 from "@/app/images/home12.png"
 import pic12 from "@/app/images/home13.png"
+import { MdAirlineSeatLegroomExtra } from "react-icons/md"; 
 
 export default function Home(){
  return <div className="font-sans">
-    <div className="lg:w-full ex:w-[380px] h-[5442.36px] overflow-x-hidden">
+    <div className="lg:w-full ex:w-[380px] h-[5442.36px]">
        <div className="lg:w-full ex:w-[380px] lg:h-[65px] ex:h-[60px] bg-[#E5E5E5] lg:text-center lg:pl-0 ex:pl-[px] text-center py-[15px]">
          <p className="font-bold lg:text-[25px] ex:text-[16px] leading-4">Hello Nike App</p>
-         <p className="font-normal lg:text-[14px] ex:text-[11px] leading-6 mt-[7px] mb-[20px]">Download the app to access everything Nike. <Link href=""><span className="underline">Get Your Great</span></Link></p>
+         <p className="font-normal lg:text-[16px] ex:text-[12px] leading-6 mt-[7px] mb-[20px]">Download the app to access everything Nike. <Link href="NewFeature"><span className="underline">Get Your Great</span></Link></p>
        </div>
        <div className="lg:w-full ex:w-[380px] h-[1000px] lg:ml-[20px] lg:mb-[300px]">
           <Image src={pic1} alt="pic" className="lg:w-full lg:h-[900px] ex:w-full ex:h-[200px]" />
           <div className="w-full h-[229px] lg:mt-[45px] ex:mt-[20px] lg:text-center lg:pl-[3px] ex:pl-[10px]">
              <p className="font-semibold lg:text-[18px] ex:text-[13] leading-4">First Look</p>
              <p className="lg:font-bold ex:font-bold lg:text-[60px] ex:text-[30px] leading-[60px] lg:mt-[5px]">NIKE AIR MAX PULSE</p>
-             <p className="lg:w-[511px] ex:w-[360px] h-[48px] font-normal lg:text-[18px] ex:text-[12px] lg:leading-6 ex:leading-[22px] lg:ml-[865px] lg:mt-[12px]">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse—designed to push you past your limits and help you go to the max.</p>
-              <div className="flex gap-[10px] lg:ml-[970px] lg:mt-[70px] ex:mt-[30px]">
+             <p className="lg:w-[511px] ex:w-[360px] h-[48px] font-normal lg:text-[18px] ex:text-[12px] lg:leading-6 ex:leading-[22px] lg:ml-[875px] lg:mt-[12px]">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse—designed to push you past your limits and help you go to the max.</p>
+              <div className="flex gap-[10px] lg:ml-[990px] lg:mt-[70px] ex:mt-[30px]">
                 <div className="ex:w-[90px] lg:w-[140px] lg:h-[42px] ex:h-[35px] rounded-[30px] pt-[7px] lg:text-[18px] ex:text-[12px] lg:font-semibold bg-black text-white text-center"><p>Notify Me</p></div>
                 <div className="ex:w-[90px] lg:w-[140px] lg:h-[42px] ex:h-[35px] rounded-[30px] pt-[7px] lg:text-[18px] ex:text-[12px] lg:font-semibold bg-black text-white text-center"><p>Shop Air Max</p></div>
               </div>
