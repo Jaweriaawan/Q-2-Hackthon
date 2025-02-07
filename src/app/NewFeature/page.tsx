@@ -1,76 +1,42 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
-import Link from "next/link";
+import React, { useEffect, useState } from "react"
+import { Product } from "../../../types/products"
+import { client } from "@/sanity/lib/client"
+import { allProducts } from "@/sanity/lib/queries"
+import Link from "next/link"
+import Image from "next/image"
+import { urlFor } from "@/sanity/lib/image"
+import { cartProducts } from "../changer/changer"
 
-export default function FetchProducts() {
-  const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("all");
+export default function FetchProducts(){
 
-  const fetchProducts = async (selectedCategory: string) => {
-    let query = `
-      *[_type == "product" ${
-        selectedCategory !== "all" ? `&& category == "${selectedCategory}"` : ""
-      }]{
-        productName,
-        price,
-        category,
-        status,
-        "productImage": image.asset->url,
-        "productSlug": slug.current
-      }
-    `;
-    const fetchedProducts = await client.fetch(query);
-    setProducts(fetchedProducts);
-  };
+  const [products , setproducts] =useState<Product[]> ([])
 
   useEffect(() => {
-    fetchProducts(category);
-  }, [category]);
+    async function fetching(){
+      const fetchingProducts : Product[] = await client.fetch(allProducts)
+      setproducts(fetchingProducts)
+    }
+    fetching()
+  }, [])
+    
 
-  return (
-    <div className="w-full">
-      <div className="flex justify-center mt-10">
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="all">All</option>
-          <option value="Men's Shoes">Men Shoes</option>
-          <option value="Women's Shoes">Women Shoes</option>
-          <option value="Accessories">Accessories</option>
-          {/* Add more categories here as needed */}
-        </select>
-      </div>
-
-      <div className="grid lg:grid-cols-3 lg:gap-[50px] ex:gap-[25px] lg:pl-[40px] ex:pl-[47px] mt-[50px] mb-[100px]">
-        {products.map((data: any) => (
-          <Link href={`productDetail/${data.productSlug}`} key={data.productSlug}>
-            <div className="lg:w-[600px] lg:h-[720px] ex:w-[300px] ex:h-[430px]">
-              <img
-                src={urlFor(data.productImage).url()}
-                alt={data.productName}
-                className="lg:w-[600px] lg:h-[600px] ex:w-[300px] ex:h-[300px]" 
-              />
-              <div className="pl-[20px] pt-[20px] font-sans">
-                <h1 className="lg:text-[24px] ex:text-[18px] lg:font-semibold ex:font-bold">
-                  {data.productName}
-                </h1>
-                <p className="lg:text-[19px] ex:text-[17px] text-gray-400">
-                  {data.category}
-                </p>
-                <p className="lg:text-[21px] ex:text-[18px] lg:font-semibold ex:font-bold">
-                  PKR: {data.price}
-                </p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+  return <div className="grid grid-cols-4 gap-[30px] pl-[120px] pt-[20px]">
+     {
+        products.map((products) => (
+        <Link href={`/productDetail/${products.slug.current}`}>
+            <div>
+              {products.image && (
+                <Image src={urlFor(products.image).url()} alt="" width={400} height={400}/>
+              )}
+          <div className="flex justify-between w-[400px] font-bold text-[18px] px-[10px] pt-[15px]">
+             <p>{products.productName}</p>
+             <p className="text-gray-400 text-[16px] font-semibold">${products.price}</p>
+          </div>
+        </div>
+        </Link>
+     ))
+  }
+</div>
 }
-

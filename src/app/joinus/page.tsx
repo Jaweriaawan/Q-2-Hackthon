@@ -1,23 +1,23 @@
 import Image from "next/image"
-import logo from "@/app/images/logo.png"
+import logo from "@/app/images/logo.png" 
 
-export default function Joinus(){
+export default function Joinus(){ 
  return <div className="w-full">
-  <div className="w-[380px] lg:h-[833px] ex:h-[780px] font-sans lg:ml-[750px] ex:ml-[5px] mt-[80px] mb-[100px] lg:pt-[28px] ex:pt-[12px] border-[#E5E5E5] border-[2px] rounded-[10px] lg:mt-[80px] lg:mb-[90px]  shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
+  <div className="ex:w-[380px] lg:w-[450px] lg:h-[920px] ex:h-[780px] font-sans lg:ml-[750px] ex:ml-[5px] mt-[80px] mb-[100px] lg:pt-[28px] ex:pt-[12px] border-[#E5E5E5] border-[2px] rounded-[10px] lg:mt-[80px] lg:mb-[90px]  shadow-gray-400 shadow-md hover:shadow-lg hover:shadow-slate-600">
   <div className="w-[324px] h-[182px] text-center ml-[28px]">
-    <Image src={logo} alt="logo" className="ml-[135px]" />
+    <Image src={logo} alt="logo" className="ml-[150px]" />
     <p className="font-bold text-[18px] leading-[16px] lg:mt-[30px] ex:mt-[25px] ex:ml-[-20px]">BECOME A NIKE MEMBER</p>
     <p className="w-[282px] h-[60px] lg:ml-[18px] text-[#8D8D8D] lg:mt-[30px] ex:ml-[18px] ex:mt-[10px] font-normal text-[14px] leading-[22px]">Create your Nike Member profile and get first access to the very best of Nike products, inspiration and community.</p>
   </div>
   <div className="w-[324px] h-[561px] mt-[2px] lg:ml-[28px] ex:ml-[50px]">
-    <input type="email" placeholder="Email address" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] text-[#8D8D8D] px-[8px] border-[#E5E5E5] outline-none border-[1px] rounded-[4px]" />
-    <input type="password" placeholder="Password" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] text-[#8D8D8D] px-[8px] border-[#E5E5E5] outline-none border-[1px] rounded-[4px] mt-[10px]" />
-    <input type="text" placeholder="First Name" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] text-[#8D8D8D] px-[8px] border-[#E5E5E5] outline-none border-[1px] rounded-[4px] mt-[10px]" />
-    <input type="text" placeholder="Last Name" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] text-[#8D8D8D] px-[8px] border-[#E5E5E5] outline-none border-[1px] rounded-[4px] mt-[10px]" />
-    <input type="date" placeholder="" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] px-[8px] text-[#8D8D8D] border-[#E5E5E5] outline-none border-[1px] rounded-[4px] mt-[10px]" />
-    <input type="text" placeholder="India" className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] px-[8px] text-[#8D8D8D] border-[#E5E5E5] outline-none border-[1px] rounded-[4px] mt-[10px]" />
+    <input type="email" placeholder="Email address" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
+    <input type="password" placeholder="Password" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
+    <input type="text" placeholder="First Name" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
+    <input type="text" placeholder="Last Name" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
+    <input type="date" placeholder="" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
+    <input type="text" placeholder="India" className="lg:w-[360px] ex:w-[280px] ex:h-[40px] lg:h-[50px] font-normal ex:text-[14px] lg:text-[17px] hover:border-black mt-[20px] text-[#8D8D8D] border-[3px] rounded-[6px] border-[#E5E5E5] outline-none px-[14px]" />
     <div className="lg:w-[324px] lg:h-[40px] ex:w-[280px] ex:h-[40px] mt-[10px] flex">
-       <input type="text" placeholder="Male" className="lg:w-[153px] lg:h-[40px] ex:w-[130px] ex:h-[40px] px-[8px] text-[#8D8D8D] border-[#E5E5E5] outline-none border-[1px] rounded-[4px]" />
+       <input type="text" placeholder="Male" className="lg:w-[153px] lg:h-[40px] ex:w-[130px] ex:h-[40px] px-[8px] text-[#8D8D8D] hover:border-black border-[3px] border-[#E5E5E5] outline-none rounded-[4px]" />
        <input type="text" placeholder="Female" className="lg:w-[153px] lg:h-[40px] ex:w-[130px] ex:h-[40px] px-[8px] text-[#8D8D8D] border-[#E5E5E5] ml-[18px] outline-none border-[1px] rounded-[4px]" />
     </div>
     <div className="w-[324px] h-[28px] mt-[20px] flex">

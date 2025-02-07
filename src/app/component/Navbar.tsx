@@ -9,23 +9,29 @@ import logo from "@/app/images/logo.png";
 import { CiHeart } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
 import Hamburger from "./Hamburger";
+import SearchProducts from "./searchProducts";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const cartItems = useSelector((state: RootState) => state.cart); // Access the cart state directly since it's an array 
+
+  useEffect(() => {
+    console.log("cartUpdated", cartItems)
+  }, [cartItems])
 
   return (
     <div className="w-full">
     {/* Top Bar */}
     <div className="w-full lg:h-[50px] ex:h-[40px] flex justify-between ex:pl-[20px] ex:pr-[20px] lg:pl-[100px] bg-[#F5F5F5] py-[10px] mb-[10px]">
       <Image src={des} alt="" className="w-[30px] h-[30px]" />
-      <div className="lg:w-[450.81px] lg:h-[36px] lg:pt-[10px] ex:pt-[2px] lg:text-[22px] ex:text-[15px] text-[#00000098] font-semibold leading-[14px] flex lg:gap-[20px] ex:gap-[12px] lg:mr-[50px]">
-        <Link href="/">Home</Link>
+      <div className="lg:w-[450.81px] lg:h-[36px] lg:pt-[10px] ex:pt-[2px] lg:text-[18px] ex:text-[15px] text-[#00000098] font-semibold leading-[14px] flex lg:gap-[15px] ex:gap-[12px] lg:mr-[50px]">
+        <Link href="/" className="mt-[3px]">Home</Link>
         <hr className="lg:w-[3px] ex:w-[2px] lg:h-[20px] ex:h-[13px] bg-[#00000060]" />
-        <Link href="/login">Login</Link>
+        <Link href="/login" className="mt-[3px]">Login</Link>
         <hr className="lg:w-[3px] ex:w-[2px] lg:h-[20px] ex:h-[13px] bg-[#00000060]" />
-        <Link href="/joinus">Join us</Link>
+        <Link href="/joinus" className="mt-[3px]">Join us</Link>
         <hr className="lg:w-[3px] ex:w-[2px] lg:h-[20px] ex:h-[13px] bg-[#00000060]" />
-        <Link href="/Help">Help</Link>
+        <Link href="/Help" className="mt-[3px]">Help</Link>
       </div>
     </div>
   
@@ -44,19 +50,18 @@ export default function Navbar() {
       </div>
   
       {/* Navbar Links */}
-      <div className="lg:w-[610px] lg:h-[30px] justify-between font-semibold text-[23px] leading-5 lg:flex ex:hidden lg:ml-[500px] ex:ml-[12px] lg:mt-[10px]">
-       <Link href="/NewFeature"><p>New & Featured</p></Link>
-       <Link href=""><p>Men</p></Link>
-       <Link href="/Female"><p>Women</p></Link>
-       <Link href=""><p>Kids</p></Link>
-       <Link href=""><p>Sale</p></Link>
-       <Link href=""><p>SNKRS</p></Link>
+      <div className="lg:w-[750px] lg:h-[30px] justify-between font-semibold text-[20px] leading-5 lg:flex ex:hidden lg:ml-[500px] ex:ml-[12px] lg:mt-[10px]">
+       <Link href="/NewFeature" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>New & Featured</p></Link>
+       <Link href="" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>Men</p></Link>
+       <Link href="/Female" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>Women</p></Link>
+       <Link href="" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>Kids</p></Link>
+       <Link href="" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>Sale</p></Link>
+       <Link href="" className="cursor-pointer hover:underline focus:underline decoration-black underline-[3px] underline-offset-4"><p>SNKRS</p></Link>
       </div>
   
       {/* Search Bar */}
-      <div className="w-[250px] hidden md:flex lg:h-[40px] ex:h-[35px] ex:ml-[60px] ex:mt-[8px] rounded-[100px] bg-[#F5F5F5] lg:ml-[180px] gap-[12px] lg:mt-[-1px]">
-        <IoSearchOutline className="ml-[10px] lg:mt-[7px] ex:mt-[5px] w-[24px] h-[24px] text-[#CCCCCC]" />
-        <p className="text-[#CCCCCC] mt-[8px]">Search</p>
+      <div className="mb-[40px]">
+        <SearchProducts />
       </div>
   
       {/* Cart and Wishlist */}
@@ -64,11 +69,13 @@ export default function Navbar() {
         <div className="relative flex items-center">
           <Link href="/Cart">
             <IoBagOutline className="w-[30px] h-[30px]" />
+            
             {cartItems.length > 0 && (
-              <span className="absolute top-0 right-0 text-[14px] font-semibold w-[19px] h-[19px] bg-red-500 text-white flex items-center justify-center rounded-full">
+             <span className="absolute top-0 right-0 text-[12px] font-semibold w-[17px] h-[17px] mt-[25px] mr-[6px] flex items-center justify-center rounded-full">
                 {cartItems.length}
-              </span>
-            )} 
+            </span>
+            )}
+
           </Link>
         </div>
         <CiHeart className="w-[33px] h-[33px] mt-[14px]" />
