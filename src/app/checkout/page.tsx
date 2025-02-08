@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import { CgChevronRight } from "react-icons/cg";
 import { Product } from "../../../types/products";
 import { getItems } from "../changer/changer";
 import { client } from "@/sanity/lib/client";
@@ -43,7 +41,7 @@ export default function CheckoutPage() {
   }, []);
 
   const subtotal = cartItems.reduce(
-    (total, item) => total + item.price * item.inventory,
+    (total, item:any) => total + item.price * item.inventory,
     0
   );
   const total = Math.max(subtotal - discount, 0);
@@ -211,7 +209,7 @@ export default function CheckoutPage() {
                 </div>
 
                 {cartItems.length > 0 ? (
-                    cartItems.map ((item) => (
+                    cartItems.map ((item:any) => (
                         <div key={item._id} className="flex w-[480px] h-[125px] gap-[15px] pt-[5px] mt-[20px]">
                             <div>
                                 {item.image && (

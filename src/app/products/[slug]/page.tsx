@@ -1,4 +1,4 @@
-import ProductDetails from "@/app/component/ProductDetails";
+import ProductPage from "@/app/ProductDetails/[slug]/page";
 import { client } from "@/sanity/lib/client";
 
 interface Props {
@@ -27,5 +27,9 @@ export default async function Page({ params }: Props) {
     return <div className="text-center text-red-500">Product not found.</div>;
   }
 
-  return <ProductDetails product={product} />;
+  // return <ProductPage product={product} />;
+
+  return <div>
+    
+  </div>
 }

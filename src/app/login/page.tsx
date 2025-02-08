@@ -1,8 +1,8 @@
 import Image from "next/image"
 import logo from "@/app/images/logo.png"
 import Link from "next/link"
-import { SignedOut, SignInButton } from "@clerk/clerk-react"
-
+import { SignedOut, SignInButton } from "@clerk/nextjs"
+ 
 
 export default function Login(){
  return <div className="w-full font-sans">
@@ -31,3 +31,4 @@ export default function Login(){
  </div>
 
 }
+

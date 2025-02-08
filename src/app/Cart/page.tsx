@@ -71,7 +71,7 @@ const router = useRouter();
   };
 
   const Total = () => {
-    return cartItem.reduce((total, item) => total + item.price * item.inventory, 0);
+    return cartItem.reduce((total, item:any) => total + item.price * item.inventory, 0);
   };
 
   return (

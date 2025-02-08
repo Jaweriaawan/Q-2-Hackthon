@@ -7,7 +7,7 @@ import { allProducts } from "@/sanity/lib/queries"
 import Link from "next/link"
 import Image from "next/image"
 import { urlFor } from "@/sanity/lib/image"
-import { cartProducts } from "../changer/changer"
+
 
 export default function FetchProducts(){
 

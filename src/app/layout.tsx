@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./component/Navbar";
+import Header from "./components/Navbar";
 import Provider from "./Redux/provider";
 import { ClerkProvider } from "@clerk/nextjs"
 

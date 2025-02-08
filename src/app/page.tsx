@@ -8,7 +8,7 @@ import pic10 from "@/app/images/home11.png"
 import pic11 from "@/app/images/home12.png"
 import pic12 from "@/app/images/home13.png"
 import Shoes from "./latest/page";
-import Latest from "./component/latest";
+import Latest from "./components/latest";
 
 export default function Home(){
  return <div className="font-sans">
