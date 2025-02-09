@@ -22,21 +22,26 @@ export default function FetchProducts(){
   }, [])
     
 
-  return <div className="grid lg:grid-cols-3 ex:grid-cols-1 lg:gap-[30px] ex:gap-[40px] lg:pl-[120px] ex:pl-[55px] lg:pt-[20px] ex:pt-[30px]">
-     {
-        products.map((products) => (
-        <Link href={`/ProductDetails/${products.slug.current}`}>
-            <div>
-              {products.image && (
-                <Image src={urlFor(products.image).url()} alt="" width={300} height={300} className="ex:w-[300px] ex:h-[300px]"/>
-              )}
-          <div className="flex justify-between lg:w-[400px] ex:w-[300px] font-bold text-[18px] px-[10px] pt-[15px]">
-             <p>{products.productName}</p>
-             <p className="text-gray-400 text-[16px] font-semibold">${products.price}</p>
-          </div>
-        </div>
-        </Link>
-     ))
-  }
+  return  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
+  {products.map((item: any) => (
+   <Link key={item._id} href={`/ProductDetails/${item.slug.current}`}>
+      <div key={item.id} className="bg-white rounded-lg p-4 duration-300">
+         {item.image && (
+               <Image 
+                 src={urlFor(item.image).url()} 
+                 alt={item.productName} 
+                 width={400} 
+                 height={400} 
+                 className="w-full h-auto"
+               />
+             )}
+      <div className="mt-4 text-center">
+        <h2 className="text-lg font-semibold text-gray-800">{item.productName}</h2>
+        <p className="text-gray-500 text-sm">{item.category}</p>
+        <p className="text-xl font-bold text-gray-900 mt-2">${item.price}</p>
+      </div>
+    </div>
+   </Link>
+  ))}
 </div>
 }
