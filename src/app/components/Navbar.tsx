@@ -49,7 +49,7 @@ export default function Navbar() {
           <Link href="/NewFeature" className="hover:underline">New & Featured</Link>
           <Link href="/male" className="hover:underline">Men</Link>
           <Link href="/Female" className="hover:underline">Women</Link>
-          <Link href="kids" className="hover:underline">Kids</Link>
+          <Link href="" className="hover:underline">Kids</Link>
           <Link href="#" className="hover:underline">Sale</Link>
           <Link href="#" className="hover:underline">SNKRS</Link>
         </div>
