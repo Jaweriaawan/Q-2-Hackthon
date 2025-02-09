@@ -7,7 +7,7 @@ import { allProducts } from "@/sanity/lib/queries"
 import Link from "next/link"
 import Image from "next/image"
 import { urlFor } from "@/sanity/lib/image"
-
+import { cartProducts } from "../changer/changer"
 
 export default function FetchProducts(){
 
@@ -25,7 +25,7 @@ export default function FetchProducts(){
   return <div className="grid grid-cols-4 gap-[30px] pl-[120px] pt-[20px]">
      {
         products.map((products) => (
-        <Link href={`/productDetail/${products.slug.current}`}>
+        <Link href={`/ProductDetails/${products.slug.current}`}>
             <div>
               {products.image && (
                 <Image src={urlFor(products.image).url()} alt="" width={400} height={400}/>

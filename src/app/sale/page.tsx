@@ -22,7 +22,7 @@ export default function WomensItems() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
       {womenShoes.map((item: any) => (
        <Link key={item._id} href={`/ProductDetails/${item.slug.current}`}>
-          <div key={item.id} className="bg-white rounded-lg p-4 duration-300">
+          <div key={item.id} className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition-shadow duration-300">
              {item.image && (
                    <Image 
                      src={urlFor(item.image).url()} 

@@ -1,17 +1,17 @@
 import { client } from "@/sanity/lib/client"
-import { Product } from "../../../../types/products";
-import { groq } from "next-sanity";
-import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
-import AddToCartButton  from "@/app/components/cartButton";
+import { Product } from "../../../../types/products"
+import { groq } from "next-sanity"
+import Image from "next/image"
+import { urlFor } from "@/sanity/lib/image"
+import AddToCartButton from "@/app/components/cartButton"
 
 interface ProductsPageProps {
-  params : Promise<{slug : string}>
+  params: { slug: string }
 }
 
-async function getProduct(slug : string): Promise<Product > {
-  return client.fetch (
-    groq `*[_type == "product" && slug.current == $slug][0] {
+async function getProduct(slug: string): Promise<Product> {
+  return client.fetch(
+    groq`*[_type == "product" && slug.current == $slug][0] {
       _id,
       productName,
       category,
@@ -19,28 +19,39 @@ async function getProduct(slug : string): Promise<Product > {
       image,
       price,
       description,
-    } `,{slug}
+    }`,
+    { slug }
   )
 }
 
+export default async function ProductPage({ params }: ProductsPageProps) {
+  const { slug } = params
+  const product = await getProduct(slug)
 
-export default async function ProductPage({params}: ProductsPageProps){
-   const {slug} = await params;
-   const product = await getProduct(slug)
-
-
-   return <div className="w-full flex h-[560px] px-[300px] mt-[90px] font-sans">
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 sm:px-8 lg:px-32 py-12 font-sans">
       {product?.image && (
-        <Image src={urlFor(product.image).url()} alt="" width={350} height={350} className="w-[500px] h-[500px]" />
+        <div className="flex justify-center">
+          <Image
+            src={urlFor(product.image).url()}
+            alt={product?.productName}
+            width={500}
+            height={500}
+            className="w-full max-w-[500px] h-[500px] object-cover rounded-lg shadow-lg"
+          />
+        </div>
       )}
 
-      <div className="w-[600px] ml-[70px] mt-[45px]">
-         <p className="text-[26px] font-bold">{product?.productName}</p>
-         <p className="text-[19px] text-gray-400 mt-[5px]">{product?.category}</p>
-         <p className="text-[22px] font-bold mt-[5px]">${product?.price}</p>
-         <p className="text-[18px] text-gray-500 mt-[5px]">{product?.description}</p>
+      <div className="lg:col-span-2 flex flex-col justify-center">
+        <p className="text-3xl font-bold">{product?.productName}</p>
+        <p className="text-lg text-gray-400 mt-2">{product?.category}</p>
+        <p className="text-2xl font-bold mt-2">${product?.price}</p>
+        <p className="text-lg text-gray-500 mt-4">{product?.description}</p>
 
-         <AddToCartButton product={product} />
+        <div className="mt-6">
+          <AddToCartButton product={product} />
+        </div>
       </div>
-   </div>
+    </div>
+  )
 }
