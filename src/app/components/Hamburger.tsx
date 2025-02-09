@@ -40,10 +40,10 @@ export default function Hamburger() {
           <Link href="/NewFeature" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">
             New & Featured
           </Link>
-          <Link href="/male" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">
+          <Link href="male" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">
             Men
           </Link>
-          <Link href="/Female" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">
+          <Link href="Female" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">
             Women
           </Link>
           <Link href="#" className="text-lg font-semibold hover:text-gray-900 dark:hover:text-white transition-colors">

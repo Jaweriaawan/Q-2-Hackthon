@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Product } from "../../../types/products";
 import { client } from "@/sanity/lib/client";
-import { Female } from "@/sanity/lib/queries";
+import { male } from "@/sanity/lib/queries";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
@@ -12,7 +12,7 @@ export default function WomensItems() {
 
    useEffect(() => {
       async function womenItems(){
-        const fetchItems : Product[] = await client.fetch(Female)
+        const fetchItems : Product[] = await client.fetch(male)
         setWomenShoes(fetchItems)
       } 
       womenItems()
