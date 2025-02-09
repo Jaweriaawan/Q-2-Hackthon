@@ -22,7 +22,7 @@ export default function FetchProducts(){
   }, [])
     
 
-  return  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
+  return  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-6">
   {products.map((item: any) => (
    <Link key={item._id} href={`/ProductDetails/${item.slug.current}`}>
       <div key={item.id} className="bg-white rounded-lg p-4 duration-300">

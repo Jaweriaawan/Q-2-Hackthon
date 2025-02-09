@@ -37,7 +37,7 @@ export default async function ProductPage({ params }: ProductsPageProps) {
             alt={product?.productName}
             width={500}
             height={500}
-            className="w-full lg:max-w-[500px] lg:h-[500px] ex:w-[300px] ex:h-[300px] object-cover rounded-lg shadow-lg"
+            className="w-full lg:w-[500px] lg:h-[500px] ex:w-[300px] ex:h-[300px] object-cover rounded-lg shadow-lg"
           />
         </div>
       )}

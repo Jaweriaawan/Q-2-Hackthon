@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Navbar";
 import Provider from "./Redux/provider";
 import { ClerkProvider } from "@clerk/nextjs"
+import Footer from "./components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Provider>
           <Header />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>

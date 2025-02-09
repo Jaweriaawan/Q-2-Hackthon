@@ -95,9 +95,9 @@ const CartPage = () => {
                 <Image 
                   src={urlFor(item.image).url()} 
                   alt="" 
-                  width={100} 
-                  height={100} 
-                  className="rounded-md"
+                  width={110} 
+                  height={110} 
+                  className="rounded-md ex:w-[110px] ex:h-[110px] lg:w-[200px] lg:h-[200px]"
                 />
               )}
               {/* Quantity Controls in Rounded Box */}
