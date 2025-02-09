@@ -22,15 +22,15 @@ export default function FetchProducts(){
   }, [])
     
 
-  return <div className="grid grid-cols-4 gap-[30px] pl-[120px] pt-[20px]">
+  return <div className="grid lg:grid-cols-3 ex:grid-cols-1 lg:gap-[30px] ex:gap-[40px] lg:pl-[120px] ex:pl-[55px] lg:pt-[20px] ex:pt-[30px]">
      {
         products.map((products) => (
         <Link href={`/ProductDetails/${products.slug.current}`}>
             <div>
               {products.image && (
-                <Image src={urlFor(products.image).url()} alt="" width={400} height={400}/>
+                <Image src={urlFor(products.image).url()} alt="" width={300} height={300} className="ex:w-[300px] ex:h-[300px]"/>
               )}
-          <div className="flex justify-between w-[400px] font-bold text-[18px] px-[10px] pt-[15px]">
+          <div className="flex justify-between lg:w-[400px] ex:w-[300px] font-bold text-[18px] px-[10px] pt-[15px]">
              <p>{products.productName}</p>
              <p className="text-gray-400 text-[16px] font-semibold">${products.price}</p>
           </div>

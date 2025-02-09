@@ -11,8 +11,8 @@ import Shoes from "./latest/page";
 import Latest from "./components/latest";
 
 export default function Home(){
- return <div className="font-sans">
-    <div className="lg:w-full ex:w-full h-[5442.36px]">
+ return <div className="font-sans overflow-x-hidden">
+    <div className="lg:w-full ex:w-full lg:h-[5442.36px] ex:h-[4200px]">
        <div className="lg:w-full ex:w-full lg:h-[65px] ex:h-[60px] bg-[#E5E5E5] lg:text-center text-center py-[15px]">
          <p className="font-bold lg:text-[25px] ex:text-[16px] leading-4">Hello Nike App</p>
          <p className="font-normal lg:text-[16px] ex:text-[12px] leading-6 mt-[7px] mb-[20px]">Download the app to access everything Nike. <Link href="NewFeature"><span className="underline">Get Your Great</span></Link></p>
@@ -53,7 +53,7 @@ export default function Home(){
 
        <div className="lg:w-full ex:w-[380px] ex:h-[1700px] lg:h-[561px] lg:mt-[-80px] ex:mt-[-450px] lg:mb-[100px]">
          <p className="font-semibold lg:text-[32px] ex:text-[25px] leading-7 lg:ml-[48px] ex:ml-[20px]">Gear Up</p>
-            <div className="w-full mt-[20px] lg:h-[540px] lg:mt-0 pl-[-20px]">
+            <div className="w-full mt-[20px] lg:h-[540px] lg:mt-0 ex:ml-[10px]">
               <Latest />
             </div>
        </div>
@@ -70,7 +70,7 @@ export default function Home(){
          </div>
        </div>
 
-       <div className="lg:w-full ex:w-full h-[592px] lg:mt-[500px] ex:mt-[-500px] mb-[300px]">
+       <div className="lg:w-full ex:w-full lg:h-[592px] lg:mt-[500px] ex:mt-[-500px] lg:mb-[300px]">
          <p className="font-semibold lg:text-[32px] ex:text-[25px] lg:ml-[45px] ex:ml-[7px] leading-7 lg:mb-[30px]">The Essentials</p>
          <div className="lg:w-full ex:w-full ex:h-[1500px] lg:h-[540px] lg:flex lg:gap-[15px] mt-[30px]">
            <div><Image src={pic10} alt="pics" className="lg:w-[640px] lg:h-[740px] ex:w-full ex:h-[470px]" />
@@ -85,7 +85,7 @@ export default function Home(){
          </div>
        </div>
 
-       <div className="lg:w-full lg:h-[250px] ex:w-[380px] ex:h-[740px] ex:ml-[7px] lg:flex ex:hidden lg:gap-[300px] mb-[100px] pl-[200px] mt-[200px]">
+       <div className="lg:w-full lg:h-[250px] ex:w-[380px] ex:h-[740px] ex:ml-[7px] lg:flex ex:hidden lg:gap-[300px] mb-[100px] pl-[100px] lg:mt-[200px]">
          <div>
            <p className="font-medium ex:text-[15px] lg:text-[25px] leading-6">Icons</p>
            <div className="ex:w-[190px] lg:w-[200px] ex:h-[144px] lg:h-[200px] ex:text-[12px] lg:text-[18px] text-[#757575]">

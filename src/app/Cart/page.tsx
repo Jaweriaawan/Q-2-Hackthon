@@ -75,7 +75,7 @@ const CartPage = () => {
   };
 
  return (
-  <div className="container mx-auto p-4 md:p-6">
+  <div className="w-full p-4 md:p-6">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     
     {/* Cart Items */}
@@ -87,7 +87,7 @@ const CartPage = () => {
         cartItem.map((item) => (
           <div 
             key={item._id} 
-            className="flex flex-col sm:flex-row items-center justify-between border-b pb-6 gap-6"
+            className="flex ex:px-[30px] w-full items-center justify-between border-b pb-6 gap-6 pt-[30px]"
           >
             {/* Left Side - Image */}
             <div className="flex flex-col items-center gap-2">
@@ -101,7 +101,7 @@ const CartPage = () => {
                 />
               )}
               {/* Quantity Controls in Rounded Box */}
-              <div className="flex items-center gap-2 border rounded-full px-4 py-1">
+              <div className="flex items-center gap-2 border rounded-full px-[25px] py-[3px] mt-[10px] border-black">
                 <button onClick={() => handleDecrement(item._id)}>−</button>
                 <span className="text-lg font-semibold">{item.inventory}</span>
                 <button onClick={() => handleIncrement(item._id)}>+</button>
@@ -109,10 +109,8 @@ const CartPage = () => {
             </div>
 
             {/* Center - Product Details */}
-            <div className="text-center sm:text-left flex-1">
-              <h3 className="text-lg font-semibold">{item.productName}</h3>
-              <p className="text-gray-500">${item.price}</p>
-              <p className="text-sm text-gray-400">{item.category}</p>
+            <div className="text-center flex lg:gap-[10px]">
+              <p className="text-gray-700 font-semibold">${item.price}</p>
             </div>
 
             {/* Right Side - Remove Button */}
@@ -131,7 +129,7 @@ const CartPage = () => {
     <div className="p-6 bg-white rounded-lg h-fit">
       <p className="text-xl font-bold border-b pb-3 mb-4">Total: ${Total()}</p>
       <button
-        className="w-full px-6 py-3 bg-black text-white font-semibold rounded-md"
+        className="w-full px-6 py-3 lg:ml-0 bg-black text-white font-semibold rounded-md"
         onClick={handleProceed}
       >
         Checkout
