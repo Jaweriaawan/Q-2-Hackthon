@@ -68,35 +68,15 @@ export default function CheckoutPage() {
   };
 
   const handlePlaceOrder = async () => {
-     
-    Swal.fire({
-        title : "Processing your order",
-        text : "please wait a moment",
-        icon : "info",
-        showCancelButton : true,
-        confirmButtonColor : "#3085d6",
-        cancelButtonColor : "#d33",
-        confirmButtonText : "Proceed",
-     }).then((result) => {
-         if(result.isConfirmed){
-             if(validateForm()){
-                localStorage.removeItem("appliedDiscount")
-
-                Swal.fire(
-                    "Success",
-                    "Your order has been successfully proceed",
-                    "success"
-                )
-             } else {
-                Swal.fire(
-                    "Error!",
-                    "Please fill all fields",
-                    "error"
-                )
-             }
-         }
-     })
-
+    if (!validateForm()) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please fill all fields",
+        icon: "error",
+        confirmButtonColor: "#3085d6",
+      });
+      return;
+    }
 
     const orderData = {
         _type : 'order',
@@ -120,11 +100,35 @@ export default function CheckoutPage() {
     }
 
     try {
-        await client.create(orderData)
-        localStorage.removeItem("appliedDiscount")
-
+      await client.create(orderData);
+      localStorage.removeItem("appliedDiscount");
+  
+      Swal.fire({
+        title: "Success!",
+        text: "Your order has been successfully placed.",
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+      }).then(() => {
+        // Optionally, you can redirect the user or clear the form here
+        setFormValues({
+          firstName: "",
+          lastName: "",
+          address: "",
+          city: "",
+          zipCode: "",
+          phone: "",
+          email: "",
+        });
+        setCartItems([]);
+      });
     } catch (error) {
-        console.error("error creating order", error)
+      console.error("Error creating order", error);
+      Swal.fire({
+        title: "Error!",
+        text: "There was an error processing your order. Please try again.",
+        icon: "error",
+        confirmButtonColor: "#3085d6",
+      });
     }
   };
   return  <div className="lg:container lg:mx-auto ex:w-full p-4 md:p-8 lg:p-12">
@@ -146,7 +150,7 @@ export default function CheckoutPage() {
         <input type="text" placeholder="City*" id="city" value={formValues.city} onChange={handleInputChange} className="p-3 border rounded-md w-full" />
         <input type="number" placeholder="Zip Code*" id="zipCode" value={formValues.zipCode} onChange={handleInputChange} className="p-3 border rounded-md w-full" />
       </div>
-      <button className="mt-6 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition">Place Order</button>
+      <button className="mt-6 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition" onClick={handlePlaceOrder}>Place Order</button>
     </div>
 
     {/* Order Summary */}
