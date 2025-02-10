@@ -45,7 +45,7 @@ export default function Navbar() {
         </div>
 
         {/* Navbar Links (Desktop) */}
-        <div className="hidden md:flex space-x-6 font-semibold text-lg">
+        <div className="hidden md:flex space-x-6 font-semibold text-lg ml-[250px]">
           <Link href="/NewFeature" className="hover:underline">New & Featured</Link>
           <Link href="/male" className="hover:underline">Men</Link>
           <Link href="/Female" className="hover:underline">Women</Link>
