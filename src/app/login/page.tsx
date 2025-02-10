@@ -1,14 +1,13 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import logo from "@/app/images/logo.png";
 import Link from "next/link";
-import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { useUser, SignInButton, SignOutButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Login() {
-
   const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
 
@@ -18,7 +17,7 @@ export default function Login() {
     }
   }, [isSignedIn, router]);
 
-  if (!isLoaded) return <p>Loading...</p>;
+  if (!isLoaded) return <p>Loading...</p>; // Wait until auth state is loaded
 
   return (
     <div className="w-full flex justify-center items-center min-h-screen px-4">
@@ -48,9 +47,9 @@ export default function Login() {
           <p className="text-xs text-gray-600 text-center mb-4">
             By logging in, you agree to Nike's Privacy Policy and Terms of Use.
           </p>
-          
+
           {!isSignedIn ? (
-            <SignInButton afterSignInUrl="/checkout" afterSignUpUrl="/checkout">
+            <SignInButton redirectUrl="/checkout" mode="modal">
               <button className="w-full h-12 bg-black text-white rounded-full hover:bg-white hover:text-black border border-black font-semibold flex justify-center items-center">
                 Sign In
               </button>
