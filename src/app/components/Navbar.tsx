@@ -21,8 +21,8 @@ export default function Navbar() {
   return (
     <div className="w-full">
       {/* Top Bar */}
-      <div className="w-full h-[40px] flex justify-between px-5 md:px-10 lg:px-24 bg-gray-100 py-2">
-        <Image src={des} alt="icon" className="w-8 h-8" />
+      <div className="w-full h-[35px] flex justify-between px-5 md:px-10 lg:px-24 bg-gray-100 py-2">
+        <Image src={des} alt="icon" className="w-[20px] h-[20px]" />
         <div className="flex space-x-4 text-gray-600 font-semibold text-sm md:text-base">
           <Link href="/">Home</Link>
           <span className="w-px h-5 bg-gray-400"></span>

@@ -82,7 +82,7 @@ export default function Home() {
         </div>
 
 
-        <div className="lg:w-full ex:w-full h-[977px] lg:mt-[50px] lg:mb-[400px] ex:mt-[-1130px]">
+        <div className="lg:w-full ex:w-full h-[977px] lg:mt-[50px] lg:mb-[400px] ex:mt-[-px]">
          <p className="font-semibold lg:text-[32px] ex:text-[25px] lg:ml-[48px] ex:ml-[20px] leading-6 mb-[20px]">Don't Miss</p>
          <Image src={pic9} alt="pics" className="lg:w-full lg:h-[1000px] ex:w-full ex:h-[230px] lg:mt-[40px] ex:mt-[10px]" />
          <div className="lg:w-full ex:w-full h-[177px] lg:mt-[60px] text-center">
@@ -96,7 +96,7 @@ export default function Home() {
 
 
         {/* The Essentials */}
-        <div className="w-full mt-10 px-4">
+        <div className="w-full lg:mt-10 px-4 ex:mt-[-500px]">
           <p className="font-semibold text-2xl">The Essentials</p>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             {[pic10, pic11, pic12].map((pic, index) => (
