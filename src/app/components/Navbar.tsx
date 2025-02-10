@@ -22,7 +22,7 @@ export default function Navbar() {
     <div className="w-full">
       {/* Top Bar */}
       <div className="w-full h-[35px] flex justify-between px-5 md:px-10 lg:px-24 bg-gray-100 py-2">
-        <Image src={des} alt="icon" className="w-[20px] h-[20px]" />
+        <Image src={des} alt="icon" className="ex:w-[20px] ex:h-[20px] lg:w-[25px] lg:h-[25px]" />
         <div className="flex space-x-4 text-gray-600 font-semibold text-sm md:text-base">
           <Link href="/">Home</Link>
           <span className="w-px h-5 bg-gray-400"></span>

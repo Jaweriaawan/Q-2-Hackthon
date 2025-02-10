@@ -7,6 +7,7 @@ import { Product } from "../../../types/products";
 import { getItems } from "../changer/changer";
 import { client } from "@/sanity/lib/client";
 import Swal from "sweetalert2";
+import AuthGuard from "../components/authGuard";
 
 
 export default function CheckoutPage() {
@@ -131,7 +132,9 @@ export default function CheckoutPage() {
       });
     }
   };
-  return  <div className="lg:container lg:mx-auto ex:w-full p-4 md:p-8 lg:p-12">
+  return  (
+    <AuthGuard>
+<div className="lg:container lg:mx-auto ex:w-full p-4 md:p-8 lg:p-12">
   <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
     {/* Contact Information */}
@@ -176,6 +179,9 @@ export default function CheckoutPage() {
     </div>
   </div>
 </div>
-                      
+
+</AuthGuard>
+)
+                     
 
 }

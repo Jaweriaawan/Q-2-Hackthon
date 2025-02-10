@@ -1,9 +1,25 @@
+'use client'
+
 import Image from "next/image";
 import logo from "@/app/images/logo.png";
 import Link from "next/link";
-import { SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Login() {
+
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      router.replace("/checkout"); // Redirect to checkout if already signed in
+    }
+  }, [isSignedIn, router]);
+
+  if (!isLoaded) return <p>Loading...</p>;
+
   return (
     <div className="w-full flex justify-center items-center min-h-screen px-4">
       <div className="w-full max-w-sm border border-gray-300 rounded-lg shadow-md p-6">
@@ -32,11 +48,21 @@ export default function Login() {
           <p className="text-xs text-gray-600 text-center mb-4">
             By logging in, you agree to Nike's Privacy Policy and Terms of Use.
           </p>
-          <button className="w-full h-12 bg-black text-white rounded-full hover:bg-white hover:text-black border border-black font-semibold flex justify-center items-center">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-          </button>
+          
+          {!isSignedIn ? (
+            <SignInButton afterSignInUrl="/checkout" afterSignUpUrl="/checkout">
+              <button className="w-full h-12 bg-black text-white rounded-full hover:bg-white hover:text-black border border-black font-semibold flex justify-center items-center">
+                Sign In
+              </button>
+            </SignInButton>
+          ) : (
+            <SignOutButton>
+              <button className="w-full h-12 bg-red-600 text-white rounded-full hover:bg-red-800 border border-red-600 font-semibold flex justify-center items-center">
+                Sign Out
+              </button>
+            </SignOutButton>
+          )}
+
           <p className="text-sm text-gray-600 text-center mt-4">
             Not a Member? <Link href="/joinus" className="text-black underline">Join Us.</Link>
           </p>
