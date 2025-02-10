@@ -13,11 +13,11 @@ export default function Login() {
 
   useEffect(() => {
     if (isSignedIn) {
-      router.replace("/checkout"); // Redirect to checkout if already signed in
+      router.push("/checkout"); // Redirect after successful sign-in
     }
   }, [isSignedIn, router]);
 
-  if (!isLoaded) return <p>Loading...</p>; // Wait until auth state is loaded
+  if (!isLoaded) return <p>Loading...</p>; // Wait for Clerk authentication state
 
   return (
     <div className="w-full flex justify-center items-center min-h-screen px-4">
@@ -49,7 +49,7 @@ export default function Login() {
           </p>
 
           {!isSignedIn ? (
-            <SignInButton redirectUrl="/checkout" mode="modal">
+            <SignInButton mode="modal">
               <button className="w-full h-12 bg-black text-white rounded-full hover:bg-white hover:text-black border border-black font-semibold flex justify-center items-center">
                 Sign In
               </button>
