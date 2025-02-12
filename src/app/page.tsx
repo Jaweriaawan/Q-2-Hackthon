@@ -55,7 +55,7 @@ export default function Home() {
         {/* Best of Air Max */}
         <div className="w-full mt-10 px-4 ex:mb-0 lg:mb-[150px]">
           <p className="font-semibold ex:text-2xl lg:text-3xl">Best of Air Max</p>
-          <div className="mt-4">
+          <div className="">
             <Shoes />
           </div>
         </div>
@@ -76,13 +76,13 @@ export default function Home() {
         {/* Gear Up */}
         <div className="w-full mt-10 px-4 ex:mb-0 lg:mb-[150px]">
           <p className="font-semibold ex:text-2xl lg:text-3xl">Gear Up</p>
-          <div className="mt-4">
+          <div className="">
             <Latest />
           </div>
         </div>
 
 
-        <div className="lg:w-full ex:w-full h-[977px] lg:mt-[50px] lg:mb-[400px] ex:mt-[-px]">
+        <div className="lg:w-full ex:w-full h-[977px] lg:mt-[50px] lg:mb-[400px] ex:mt-[40px]">
          <p className="font-semibold lg:text-[32px] ex:text-[25px] lg:ml-[48px] ex:ml-[20px] leading-6 mb-[20px]">Don't Miss</p>
          <Image src={pic9} alt="pics" className="lg:w-full lg:h-[1000px] ex:w-full ex:h-[230px] lg:mt-[40px] ex:mt-[10px]" />
          <div className="lg:w-full ex:w-full h-[177px] lg:mt-[60px] text-center">
